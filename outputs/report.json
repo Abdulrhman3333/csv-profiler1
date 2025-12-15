@@ -1,25 +1,25 @@
 {
-  "total_rows": 4,
+  "total_rows": 6,
   "columns": [
     {
       "name": "ame",
       "missing": 0,
-      "non_empty": 4
+      "non_empty": 6
     },
     {
       "name": "age",
-      "missing": 1,
-      "non_empty": 3
+      "missing": 2,
+      "non_empty": 4
     },
     {
       "name": "city",
       "missing": 1,
-      "non_empty": 3
+      "non_empty": 5
     },
     {
       "name": "salary",
-      "missing": 1,
-      "non_empty": 3
+      "missing": 2,
+      "non_empty": 4
     }
   ]
 }

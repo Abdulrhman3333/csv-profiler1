@@ -21,4 +21,6 @@ def write_markdown(report: dict, path: str | Path) -> None:
         lines.append(f"- Non-empty: {col['non_empty']}\n")
         lines.append(f"- Missing: {col['missing']}\n")
     
+    lines.append(f"### Notes\n")
+    lines.append(f"- the section is notes section\n")
     path.write_text("".join(lines))
