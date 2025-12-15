@@ -1,0 +1,15 @@
+[project]
+name = "csv-profiler"
+version = "0.1.0"
+description = "A CSV profiling tool"
+requires-python = ">=3.8"
+
+[tool.uv]
+package = true
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatchling.build.targets.wheel]
+packages = ["src/csv_profiler"]
