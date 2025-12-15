@@ -2,7 +2,7 @@
   "total_rows": 6,
   "columns": [
     {
-      "name": "ame",
+      "name": "name",
       "missing": 0,
       "non_empty": 6
     },
