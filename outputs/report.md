@@ -14,5 +14,5 @@
 ### salary
 - Non-empty: 4
 - Missing: 2
-## Notes
+### Notes
 - the section is notes section
