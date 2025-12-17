@@ -2,7 +2,7 @@
 - Rows: **6**
 
 ## Columns
-### ame
+### name
 - Non-empty: 6
 - Missing: 0
 ### age
