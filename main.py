@@ -1,3 +1,12 @@
+import sys
+from pathlib import Path
+
+# Add the local src/ directory so imports work when running main.py directly
+ROOT = Path(__file__).resolve().parent
+SRC_DIR = ROOT / "src"
+if str(SRC_DIR) not in sys.path:
+    sys.path.insert(0, str(SRC_DIR))
+
 from csv_profiler.io import read_csv_rows
 from csv_profiler.profile import basic_profile
 from csv_profiler.render import write_json, write_markdown

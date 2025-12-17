@@ -6,7 +6,6 @@ def read_csv_rows(path: str | Path) -> list[dict[str, str]]:
     path = Path(path) if isinstance(path, str) else path
     with path.open('r', encoding="utf-8", newline="") as f:
         reader = DictReader(f)
-        # return [dict(reader) for row in reader]
         return list(reader)
 
     
