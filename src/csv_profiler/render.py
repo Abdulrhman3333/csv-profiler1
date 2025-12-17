@@ -10,17 +10,32 @@ def write_markdown(report: dict, path: str | Path) -> None:
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     
-    cols = report.get("columns", [])
+    rows = report["summary"]["rows"]
+    rows = report["summary"]["rows"]
+    missing = col_report["missing"]
+    missing_pct = (missing / rows) if rows else 0.0
+
+
     lines: list[str] = []
-    lines.append("# CSV Profiling Report\n")
-    lines.append(f"- Rows: **{report.get('total_rows', 0)}**\n")
-    lines.append("\n## Columns\n")
-    
-    for col in cols:
-        lines.append(f"### {col['name']}\n")
-        lines.append(f"- Non-empty: {col['non_empty']}\n")
-        lines.append(f"- Missing: {col['missing']}\n")
-    
-    lines.append(f"### Notes\n")
-    lines.append(f"- the section is notes section\n")
+    lines.extend(md_header("data/sample.csv"))
+
+    lines.append("## Summary")
+    lines.append(f"- Rows: {rows:,}")
+    lines.append(f"- Columns: {report['summary']['columns']:,}")
+    lines.append("")
+
+    lines.append("## Columns (table)")
+    lines.extend(md_table_header())
+
+    for name, col in report["columns"].items():
+
+        lines.append(f"| type | missing % | unique |")
+        lines.append(f"|----------|----------|----------|")
+        lines.append(f"| Value 1  | Value 2  | Value 3  |")
+        lines.append(f"| Value 4  | Value 5  | Value 6  |")
+
+
+
+
+
     path.write_text("".join(lines))

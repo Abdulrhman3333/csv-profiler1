@@ -1,25 +1,86 @@
 {
-  "total_rows": 6,
-  "columns": [
-    {
-      "name": "name",
-      "missing": 0,
-      "non_empty": 6
+  "summary": {
+    "columns:": 4,
+    "rows:": 6
+  },
+  "columns": {
+    "name": {
+      "type": "text",
+      "stats": {
+        "count": 6,
+        "missing": 0,
+        "unique": 6,
+        "top-k": [
+          {
+            "value": "Aisha",
+            "count": 1
+          },
+          {
+            "value": "Fahad",
+            "count": 1
+          },
+          {
+            "value": "Noor",
+            "count": 1
+          },
+          {
+            "value": "Salem",
+            "count": 1
+          },
+          {
+            "value": "Ahmed",
+            "count": 1
+          }
+        ]
+      }
     },
-    {
-      "name": "age",
-      "missing": 2,
-      "non_empty": 4
+    "age": {
+      "type": "number",
+      "stats": {
+        "count": 4,
+        "missing": 2,
+        "unique": 4,
+        "min": 23.0,
+        "max": 34.0,
+        "mean": 29.25
+      }
     },
-    {
-      "name": "city",
-      "missing": 1,
-      "non_empty": 5
+    "city": {
+      "type": "text",
+      "stats": {
+        "count": 5,
+        "missing": 1,
+        "unique": 4,
+        "top-k": [
+          {
+            "value": "Jeddah",
+            "count": 2
+          },
+          {
+            "value": "Riyadh",
+            "count": 1
+          },
+          {
+            "value": "Dammam",
+            "count": 1
+          },
+          {
+            "value": "Khobar",
+            "count": 1
+          }
+        ]
+      }
     },
-    {
-      "name": "salary",
-      "missing": 2,
-      "non_empty": 4
+    "salary": {
+      "type": "number",
+      "stats": {
+        "count": 4,
+        "missing": 2,
+        "unique": 4,
+        "min": 9000.0,
+        "max": 15000.0,
+        "mean": 11777.75
+      }
     }
-  ]
+  }
 }
