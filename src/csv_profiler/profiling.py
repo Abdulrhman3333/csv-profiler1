@@ -49,32 +49,15 @@ def column_values(rows: list[dict[str, str]], col: str) -> list[str]:
     return [row.get(col, "") for row in rows]
 
 def get_columns(rows: list[dict[str, str]]) -> list[str]:
-    order: list[str] = []
-    seen: set[str] = set()
-    for row in rows:
-        for k in row.keys():
-            if k not in seen:
-                seen.add(k)
-                order.append(k)
-    return order
+    if rows is None:
+        return []
+    return list(rows[0].keys())
 
 def numeric_stats(values: list[str]) -> dict:
     usable = [v for v in values if not is_missing(v)]
-    nums_raw = [try_float(v) for v in usable]
-    nums = [n for n in nums_raw if n is not None]
-
+    nums = [try_float(v) for v in usable]
     count = len(nums)
     missing = len(values) - count
-    if count == 0:
-        return {
-            "count": 0,
-            "missing": missing,
-            "unique": 0,
-            "min": None,
-            "max": None,
-            "mean": None,
-        }
-
     unique = len(set(nums))
     min_val = min(nums)
     max_val = max(nums)
@@ -89,12 +72,7 @@ def numeric_stats(values: list[str]) -> dict:
     }
 
 def text_stats(values: list[str], top_k: int = 5) -> dict:
-    usable = []
-    for v in values:
-        if is_missing(v):
-            continue
-        else:
-            usable.append(v)
+    usable = [v for v in values if not is_missing(v)]
 
     count = len(usable)
     missing = len(values) - count
@@ -103,7 +81,6 @@ def text_stats(values: list[str], top_k: int = 5) -> dict:
     for v in usable:
         counts[v] = counts.get(v, 0) + 1
 
-    
     top_items = sorted(counts.items(), key=lambda kv: kv[1], reverse=True)[:top_k]
     top = [{"value": v, "count": c} for v, c in top_items]
 

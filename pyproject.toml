@@ -4,6 +4,7 @@ version = "0.1.0"
 description = "A CSV profiling tool"
 requires-python = ">=3.8"
 dependencies = [
+    "streamlit>=1.40.1",
     "typer>=0.20.0",
 ]
 

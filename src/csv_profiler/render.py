@@ -9,7 +9,7 @@ def md_header(source: str) -> list[str]:
         "# CSV Profiling Report",
         "",
         f"- **Source:** `{source}`",
-        f"- **Generated:** `{ts}`",
+        f"- **Generated time:** `{ts}`",
         "",
     ]
 
@@ -18,38 +18,17 @@ def md_table_header() -> list[str]:
         "| Column | Type | Missing % | Unique |\n",
         "|---|---|---:|---:|---|\n",
     ]
-# def md_col_row(name: str, typ: str, missing: int, missing_pct: float, uniq
-# return f"| `{name}` | {typ} | {missing} ({missing_pct:.1%}) | {unique
+
+def md_col_row(name: str, typ: str, missing: int, missing_pct: float, unique: str):
+    return f"| `{name}` | {typ} | {missing} ({missing_pct:.1%}) | {unique} |"
 
 def write_json(report: dict, path: str | Path) -> None:
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n")
+    text = json.dumps(report, indent=2, ensure_ascii=False) + "\n"
+    path.write_text(text, encoding="utf-8")
 
 def write_markdown(report: dict, path: str | Path) -> None:
-    path = Path(path)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    
-    rows = report["summary"]["rows"]
-    rows = report["summary"]["rows"]
-    # deprecated placeholder logic removed; see redefined function below
-
-
-    lines: list[str] = []
-    lines.extend(md_header("data/sample.csv"))
-
-    lines.append("## Summary")
-    lines.append(f"- Rows: {rows:,}")
-    lines.append(f"- Columns: {report['summary']['columns']:,}")
-    lines.append("")
-
-    lines.append("## Columns (table)")
-    lines.extend(md_table_header())
-
-    path.write_text("".join(lines))
-
-# Re-define write_markdown with a corrected implementation (overrides above)
-def write_markdown(report: dict, path: str | Path) -> None:  # type: ignore[override]
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
 

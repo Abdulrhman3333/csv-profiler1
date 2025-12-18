@@ -1,3 +1,3 @@
 def slugify(text: str) -> str:
-    edited = text.casefold().lower().strip().split()
+    edited = text.casefold().strip().split()
     return "-".join(edited)

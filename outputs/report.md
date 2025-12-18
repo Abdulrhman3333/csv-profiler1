@@ -1,54 +1,21 @@
 # CSV Profiling Report
-- Source: data/sample.csv
+
+Generated: 2025-12-18T14:03:02
 
 ## Summary
-- Rows: 6
-- Columns: 4
 
-## Columns (table)
-| Column | Type | Missing % | Unique | Extra |
-|---|---|---:|---:|---|
-| name | text | 0.0% | 6 | top: Aisha(1), Fahad(1), Noor(1) |
-| age | number | 33.3% | 4 | min=23.0, max=34.0, mean=29.25 |
-| city | text | 16.7% | 4 | top: Jeddah(2), Riyadh(1), Dammam(1) |
-| salary | number | 33.3% | 4 | min=9000.0, max=15000.0, mean=11777.75 |
+- Rows: **6**
+- Columns: **4**
 
-## Columns (details)
+## Columns
 
-### name
-- Type: text
-- Non-empty: 6
-- Missing: 0
-- Top values:
-  - Aisha: 1
-  - Fahad: 1
-  - Noor: 1
-  - Salem: 1
-  - Ahmed: 1
+| name | type | missing | missing_pct | unique |
+|---|---:|---:|---:|---:|
+| name | text | 0 | 0.0% | 6 |
+| age | number | 2 | 33.3% | 4 |
+| city | text | 1 | 16.7% | 4 |
+| salary | number | 2 | 33.3% | 4 |
 
-### age
-- Type: number
-- Non-empty: 4
-- Missing: 2
-- Min: 23.0
-- Max: 34.0
-- Mean: 29.25
+## Notes
 
-### city
-- Type: text
-- Non-empty: 5
-- Missing: 1
-- Top values:
-  - Jeddah: 2
-  - Riyadh: 1
-  - Dammam: 1
-  - Khobar: 1
-
-### salary
-- Type: number
-- Non-empty: 4
-- Missing: 2
-- Min: 9000.0
-- Max: 15000.0
-- Mean: 11777.75
-
+- Missing values are: `''`, `na`, `n/a`, `null`, `none`, `nan` (case-insensitive)

@@ -1,92 +1,41 @@
 {
-  "summary": {
-    "rows": 6,
-    "columns": 4,
-    "column_names": [
-      "name",
-      "age",
-      "city",
-      "salary"
-    ]
-  },
-  "columns": {
-    "name": {
+  "n_rows": 6,
+  "n_cols": 4,
+  "columns": [
+    {
+      "name": "name",
       "type": "text",
-      "stats": {
-        "count": 6,
-        "missing": 0,
-        "unique": 6,
-        "top-k": [
-          {
-            "value": "Aisha",
-            "count": 1
-          },
-          {
-            "value": "Fahad",
-            "count": 1
-          },
-          {
-            "value": "Noor",
-            "count": 1
-          },
-          {
-            "value": "Salem",
-            "count": 1
-          },
-          {
-            "value": "Ahmed",
-            "count": 1
-          }
-        ]
-      }
+      "missing": 0,
+      "missing_pct": 0.0,
+      "unique": 6
     },
-    "age": {
+    {
+      "name": "age",
       "type": "number",
-      "stats": {
-        "count": 4,
-        "missing": 2,
-        "unique": 4,
-        "min": 23.0,
-        "max": 34.0,
-        "mean": 29.25
-      }
+      "missing": 2,
+      "missing_pct": 33.333333333333336,
+      "unique": 4,
+      "min": 23.0,
+      "max": 34.0,
+      "mean": 29.25
     },
-    "city": {
+    {
+      "name": "city",
       "type": "text",
-      "stats": {
-        "count": 5,
-        "missing": 1,
-        "unique": 4,
-        "top-k": [
-          {
-            "value": "Jeddah",
-            "count": 2
-          },
-          {
-            "value": "Riyadh",
-            "count": 1
-          },
-          {
-            "value": "Dammam",
-            "count": 1
-          },
-          {
-            "value": "Khobar",
-            "count": 1
-          }
-        ]
-      }
+      "missing": 1,
+      "missing_pct": 16.666666666666668,
+      "unique": 4
     },
-    "salary": {
+    {
+      "name": "salary",
       "type": "number",
-      "stats": {
-        "count": 4,
-        "missing": 2,
-        "unique": 4,
-        "min": 9000.0,
-        "max": 15000.0,
-        "mean": 11777.75
-      }
+      "missing": 2,
+      "missing_pct": 33.333333333333336,
+      "unique": 4,
+      "min": 9000.0,
+      "max": 15000.0,
+      "mean": 11777.75
     }
-  }
+  ],
+  "timing_ms": 0.1718
 }
