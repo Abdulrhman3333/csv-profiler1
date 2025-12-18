@@ -1,7 +1,13 @@
 {
   "summary": {
-    "columns:": 4,
-    "rows:": 6
+    "rows": 6,
+    "columns": 4,
+    "column_names": [
+      "name",
+      "age",
+      "city",
+      "salary"
+    ]
   },
   "columns": {
     "name": {

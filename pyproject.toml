@@ -3,6 +3,9 @@ name = "csv-profiler"
 version = "0.1.0"
 description = "A CSV profiling tool"
 requires-python = ">=3.8"
+dependencies = [
+    "typer>=0.20.0",
+]
 
 [tool.uv]
 package = true
