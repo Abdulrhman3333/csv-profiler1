@@ -39,6 +39,10 @@ if report is not None:
     
     json_text = json.dumps(report, indent=2, ensure_ascii=False)
     md_text = render_markdown(report)
+    out_dir = Path("outputs")
+    out_dir.mkdir(parents=True, exist_ok=True)
+    (out_dir / "report.json").write_text(json_text, encoding="utf-8")
+    (out_dir / "report.md").write_text(md_text, encoding="utf-8")
 
     l, r = st.columns(2)
     st.download_button("Get JSON", data=json_text, file_name="report.json")
@@ -47,7 +51,6 @@ if report is not None:
 else:
     st.info("Upload a CSV to begin.")
 
-out_dir = Path("outputs")
-out_dir.mkdir(parents=True, exist_ok=True)
-(out_dir / "report.json").write_text(json_text, encoding="utf-8")
-(out_dir / "report.md").write_text(md_text, encoding="utf-8")
+
+
+# rows = list(csv.DictReader(StringIO(text)))
